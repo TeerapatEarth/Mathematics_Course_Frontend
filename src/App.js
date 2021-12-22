@@ -1,10 +1,19 @@
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./view/Home";
+import Login from "./view/Login";
+import BlankPage from "./view/BlankPage";
+import Course from "./view/Course";
+import Profile from "./view/Profile";
+import Drawer from "./component/Drawer"
 
 function App() {
   return (
-    <div className="App">
-      <h1>Test Deploy123</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<Drawer page={<Home/>} />}></Route>
+      <Route path="/login" element={<Drawer page={<Login/>} />}></Route>
+      <Route path="*" element={<BlankPage />}></Route>
+    </Routes>
   );
 }
 
