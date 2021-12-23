@@ -3,8 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./view/Home";
 import Login from "./view/Login";
 import BlankPage from "./view/BlankPage";
-import Course from "./view/Course";
-import Profile from "./view/Profile";
 import Drawer from "./component/Drawer"
 
 function App() {

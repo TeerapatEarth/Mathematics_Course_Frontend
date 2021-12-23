@@ -1,10 +1,8 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
-import { Box, Typography, Grid, Tab } from "@mui/material";
+import { Box, Grid, Tab } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import CourseCard from "../component/Card/Course";
 import Progess from "../component/Progess/Progess";
-import Footer from "../component/Footer";
 import axios from "axios";
 import useSWR from "swr";
 
