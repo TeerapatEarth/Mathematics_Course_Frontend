@@ -16,7 +16,7 @@ export default function Home() {
   };
   const fetcher = (...args) => axios(...args).then((res) => res.data);
   const { data, error } = useSWR(
-    "https://backend-mathematics.herokuapp.com/course",
+    "",
     fetcher
   );
   if (error) return <Box>Error</Box>;
