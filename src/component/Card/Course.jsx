@@ -6,16 +6,6 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-  >
-    •
-  </Box>
-);
-
-const card = <React.Fragment></React.Fragment>;
 
 export default function OutlinedCard(props) {
   return (
@@ -26,7 +16,7 @@ export default function OutlinedCard(props) {
             {props.title}
           </Typography>
           <Typography variant="h5" component="div">
-            be{bull}nev{bull}o{bull}lent
+            be
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
             adjective
