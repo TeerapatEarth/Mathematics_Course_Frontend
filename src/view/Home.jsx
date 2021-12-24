@@ -46,12 +46,10 @@ export default function Home() {
                 <Grid container spacing={5}>
                   {data.map((item) => (
                     <Grid item xs={12} md={4} key={item._id}>
-                      <CourseCard title={item.title}></CourseCard>
-                    </Grid>
-                  ))}
-                  {data.map((item) => (
-                    <Grid item xs={12} md={4} key={item._id}>
-                      <CourseCard title={item.title}></CourseCard>
+                      <CourseCard
+                        title={item.title}
+                        description={item.description}
+                      ></CourseCard>
                     </Grid>
                   ))}
                 </Grid>
