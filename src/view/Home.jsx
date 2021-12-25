@@ -5,6 +5,9 @@ import CourseCard from "../component/Card/Course";
 import Progess from "../component/Progess/Progess";
 import axios from "axios";
 import useSWR from "swr";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [value, setValue] = React.useState("1");
@@ -20,7 +23,7 @@ export default function Home() {
   if (error) return <Box>Error</Box>;
   if (!data)
     return (
-      <Grid container justifyContent="center">
+      <Grid container justifyContent="center" mt={3}>
         <Grid item xs={1}>
           <Progess />
         </Grid>
@@ -39,21 +42,26 @@ export default function Home() {
               >
                 <Tab label="Course" value="1" />
                 <Tab label="My Course" value="2" />
+                <Box mb={1} ml={3}>
+                  <Link to="/createcourse">
+                    <Fab size="large" color="primary">
+                      <AddIcon />
+                    </Fab>
+                  </Link>
+                </Box>
               </TabList>
             </Box>
             <TabPanel value="1">
-              <Box>
-                <Grid container spacing={5}>
-                  {data.map((item) => (
-                    <Grid item xs={12} md={4} key={item._id}>
-                      <CourseCard
-                        title={item.title}
-                        description={item.description}
-                      ></CourseCard>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Box>
+              <Grid container spacing={5}>
+                {data.map((item) => (
+                  <Grid item xs={12} md={4} key={item._id}>
+                    <CourseCard
+                      title={item.title}
+                      description={item.description}
+                    ></CourseCard>
+                  </Grid>
+                ))}
+              </Grid>
             </TabPanel>
             <TabPanel value="2"></TabPanel>
           </TabContext>

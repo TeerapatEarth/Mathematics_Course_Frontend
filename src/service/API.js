@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000"
+const BASE_URL = "https://backend-mathematics.herokuapp.com"
 const API = {
     Course: {
         allCourse: `${BASE_URL}/course`,

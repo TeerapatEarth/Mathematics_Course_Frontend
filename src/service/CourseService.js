@@ -1,6 +1,5 @@
 import axios from 'axios'
 import API from "./API"
-axios.defaults.withCredentials = true
 
 class CourseService {
     static async getAllCourse() {

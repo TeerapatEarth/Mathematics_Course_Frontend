@@ -18,6 +18,8 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import Avatar from "@mui/material/Avatar";
+import Fab from "@mui/material/Fab";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 const drawerWidth = 240;
 
@@ -66,6 +68,13 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 export default function PersistentDrawerLeft(props) {
+  const useStyles = {
+    fab: {
+      position: "fixed",
+      bottom: 50,
+      right: 30,
+    },
+  };
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -97,7 +106,7 @@ export default function PersistentDrawerLeft(props) {
           <Avatar>H</Avatar>
         </Toolbar>
       </AppBar>
-      
+
       <Drawer
         sx={{
           width: drawerWidth,
@@ -146,6 +155,19 @@ export default function PersistentDrawerLeft(props) {
       <Main open={open}>
         <DrawerHeader />
         {props.page}
+        <Fab
+          style={useStyles.fab}
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            })
+          }
+          color="primary"
+        >
+          <ArrowUpwardIcon />
+        </Fab>
       </Main>
     </Box>
   );
